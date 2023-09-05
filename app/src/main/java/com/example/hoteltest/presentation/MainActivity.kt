@@ -1,7 +1,8 @@
-package com.example.hoteltest
+package com.example.hoteltest.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.hoteltest.R
 
 
 class MainActivity : AppCompatActivity() {
