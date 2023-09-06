@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">HotelTest</string>
+    <string name="hotel_fragment_title">Отель</string>
 </resources>
