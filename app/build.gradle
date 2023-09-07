@@ -74,5 +74,6 @@ dependencies {
     implementation "io.insert-koin:koin-android:$koin_version"
     implementation "io.insert-koin:koin-core:$koin_version"
     implementation "io.insert-koin:koin-test:$koin_version"
+    implementation 'com.github.denzcoskun:ImageSlideshow:0.1.2'
 
 }

@@ -6,10 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.denzcoskun.imageslider.ImageSlider
+import com.denzcoskun.imageslider.constants.ScaleTypes
+import com.denzcoskun.imageslider.models.SlideModel
 import com.example.domain.Resource
 import com.example.hoteltest.R
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import java.util.Locale
 
 class HotelFragment : Fragment(R.layout.fragment_hotel) {
 
@@ -51,6 +53,15 @@ class HotelFragment : Fragment(R.layout.fragment_hotel) {
                             .addView(peculiaritiesView, i)
                         flow.addView(peculiaritiesView)
                     }
+
+                    val imageList = ArrayList<SlideModel>() // Create image list
+
+                    data.image_urls.forEach { str ->
+                        imageList.add(SlideModel(str, ScaleTypes.CENTER_CROP))
+                    }
+
+                    val imageSlider = view.findViewById<ImageSlider>(R.id.image_slider)
+                    imageSlider.setImageList(imageList)
                     Log.d("test success", it.data!!.name)
                 }
 

@@ -37,7 +37,8 @@
                 android:layout_height="wrap_content"
                 android:background="@color/white"
                 android:orientation="vertical"
-                android:padding="@dimen/dimen_16"
+                android:paddingHorizontal="@dimen/dimen_16"
+                android:paddingBottom="@dimen/dimen_16"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
@@ -50,17 +51,10 @@
                     android:layout_marginBottom="@dimen/dimen_16"
                     app:cardCornerRadius="15dp">
 
-                    <androidx.viewpager2.widget.ViewPager2
-                        android:id="@+id/view_pager_pics"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                    </androidx.viewpager2.widget.ViewPager2>
-
-                    <com.google.android.material.tabs.TabLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom" />
+                    <com.denzcoskun.imageslider.ImageSlider
+                        android:id="@+id/image_slider"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"/>
 
                 </androidx.cardview.widget.CardView>
 
