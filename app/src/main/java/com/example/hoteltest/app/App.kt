@@ -1,4 +1,4 @@
-package com.example.hoteltest
+package com.example.hoteltest.app
 
 import android.app.Application
 import com.example.hoteltest.di.appModule
