@@ -1,9 +1,9 @@
 package com.example.domain.repository
 
 import com.example.domain.Resource
-import com.example.domain.models.HotelModelDomain
+import com.example.domain.models.HotelModel
 
 interface HotelFragmentRepository {
-    suspend fun getHotelData(): Resource<HotelModelDomain>
+    suspend fun getHotelData(): Resource<HotelModel>
 
 }

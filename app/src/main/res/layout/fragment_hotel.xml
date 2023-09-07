@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -54,13 +54,13 @@
                         android:id="@+id/view_pager_pics"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
-                        
+
                     </androidx.viewpager2.widget.ViewPager2>
-                    
+
                     <com.google.android.material.tabs.TabLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="bottom"/>
+                        android:layout_gravity="bottom" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -72,6 +72,7 @@
                     app:cardElevation="0dp">
 
                     <TextView
+                        android:id="@+id/tv_hotel_rating"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="10dp"
@@ -80,26 +81,28 @@
                         android:textColor="@color/orange"
                         android:textSize="16sp"
                         app:drawableStartCompat="@drawable/star_icon"
-                        android:text="5 Превосходно" />
+                        tools:text="5 Превосходно" />
                 </androidx.cardview.widget.CardView>
 
                 <TextView
+                    android:id="@+id/tv_hotel_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/sf_pro_display_medium"
                     android:textColor="@color/black"
                     android:textSize="22sp"
-                    android:text="Steigenberger Makadi" />
+                    tools:text="Steigenberger Makadsdgsdgsdgsdgi" />
 
                 <TextView
+                    android:id="@+id/tv_hotel_adress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/sf_pro_display_medium"
                     android:textColor="@color/blue"
                     android:textSize="14sp"
-                    android:text="Steigenberger Makadi" />
+                    tools:text="Steigenberger Makadi" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -107,6 +110,7 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/tv_hotel_min_price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
@@ -114,18 +118,18 @@
                         android:fontFamily="@font/sf_pro_display_semibold"
                         android:textColor="@color/black"
                         android:textSize="30sp"
-                        android:text="от 134 673 р" />
+                        tools:text="от 134 673 р" />
 
                     <TextView
+                        android:id="@+id/tv_hotel_price_for_it"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/sf_pro_display_medium"
                         android:textColor="@color/grey"
                         android:textSize="16sp"
-                        android:text="за тур с переездом" />
+                        tools:text="за тур с переездом" />
                 </LinearLayout>
-
 
             </LinearLayout>
 
@@ -143,7 +147,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/ll_basic_data">
 
                 <TextView
-                    android:id="@+id/tv_about_hotel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/sf_pro_display_medium"
@@ -152,104 +155,19 @@
                     android:textSize="22sp" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraint_peculiarities"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp">
 
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/card_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:cardBackgroundColor="@color/grey_light"
-                        app:cardCornerRadius="5dp"
-                        app:cardElevation="0dp"
-                        app:contentPaddingBottom="5dp"
-                        app:contentPaddingLeft="10dp"
-                        app:contentPaddingRight="10dp"
-                        app:contentPaddingTop="5dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/sf_pro_display_medium"
-                            android:textColor="@color/grey"
-                            android:textSize="16sp"
-                            android:text="Бесплатный Wifi на всей территории отеля" />
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/card2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:cardBackgroundColor="@color/grey_light"
-                        app:cardCornerRadius="5dp"
-                        app:cardElevation="0dp"
-                        app:contentPaddingBottom="5dp"
-                        app:contentPaddingLeft="10dp"
-                        app:contentPaddingRight="10dp"
-                        app:contentPaddingTop="5dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/sf_pro_display_medium"
-                            android:textColor="@color/grey"
-                            android:textSize="16sp"
-                            android:text="1 км до пляжа" />
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/card3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:cardBackgroundColor="@color/grey_light"
-                        app:cardCornerRadius="5dp"
-                        app:cardElevation="0dp"
-                        app:contentPaddingBottom="5dp"
-                        app:contentPaddingLeft="10dp"
-                        app:contentPaddingRight="10dp"
-                        app:contentPaddingTop="5dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/sf_pro_display_medium"
-                            android:textColor="@color/grey"
-                            android:textSize="16sp"
-                            android:text="Бесплатный фитнес-клуб" />
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/card4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:cardBackgroundColor="@color/grey_light"
-                        app:cardCornerRadius="5dp"
-                        app:cardElevation="0dp"
-                        app:contentPaddingBottom="5dp"
-                        app:contentPaddingLeft="10dp"
-                        app:contentPaddingRight="10dp"
-                        app:contentPaddingTop="5dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/sf_pro_display_medium"
-                            android:textColor="@color/grey"
-                            android:textSize="16sp"
-                            android:text="20 км до аэропорта" />
-                    </androidx.cardview.widget.CardView>
-
                     <androidx.constraintlayout.helper.widget.Flow
-                        android:id="@+id/flow"
+                        android:id="@+id/flow_hotel"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        app:constraint_referenced_ids="card_1,card2, card3, card4"
                         app:flow_horizontalBias="0"
                         app:flow_horizontalGap="8dp"
                         app:flow_horizontalStyle="packed"
-                        app:flow_maxElementsWrap="2"
                         app:flow_verticalGap="8dp"
                         app:flow_verticalStyle="packed"
                         app:flow_wrapMode="chain"
@@ -260,6 +178,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <TextView
+                    android:id="@+id/tv_hotel_description"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
@@ -267,7 +186,7 @@
                     android:textAlignment="textStart"
                     android:textColor="@color/black"
                     android:textSize="16sp"
-                    android:text="Отель VIP-класса с собственными гольф полями. Высокий уровнь сервиса. Рекомендуем для респектабельного отдыха. Отель принимает гостей от 18 лет!" />
+                    tools:text="Отель VIP-класса с собственными гольф полями. Высокий уровнь сервиса. Рекомендуем для респектабельного отдыха. Отель принимает гостей от 18 лет!" />
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
@@ -314,17 +233,17 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/sf_pro_display_medium"
+                                    android:text="Удобства"
                                     android:textColor="@color/black_Light"
-                                    android:textSize="16sp"
-                                    android:text="Удобства" />
+                                    android:textSize="16sp" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/sf_pro_display_medium"
+                                    android:text="Самое необходимое"
                                     android:textColor="@color/grey"
-                                    android:textSize="14sp"
-                                    android:text="Самое необходимое" />
+                                    android:textSize="14sp" />
 
                             </LinearLayout>
 
@@ -336,7 +255,6 @@
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintTop_toTopOf="@+id/udobstva_box"
                                 app:layout_constraintVertical_bias="0.5" />
-
 
                             <View
                                 android:layout_width="0dp"
@@ -380,17 +298,17 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/sf_pro_display_medium"
+                                    android:text="Что включено"
                                     android:textColor="@color/black_Light"
-                                    android:textSize="16sp"
-                                    android:text="Что включено" />
+                                    android:textSize="16sp" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/sf_pro_display_medium"
+                                    android:text="Самое необходимое"
                                     android:textColor="@color/grey"
-                                    android:textSize="14sp"
-                                    android:text="Самое необходимое" />
+                                    android:textSize="14sp" />
 
                             </LinearLayout>
 
@@ -446,17 +364,17 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/sf_pro_display_medium"
+                                    android:text="Что не включено"
                                     android:textColor="@color/black_Light"
-                                    android:textSize="16sp"
-                                    android:text="Что не включено" />
+                                    android:textSize="16sp" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/sf_pro_display_medium"
+                                    android:text="Самое необходимое"
                                     android:textColor="@color/grey"
-                                    android:textSize="14sp"
-                                    android:text="Самое необходимое" />
+                                    android:textSize="14sp" />
 
                             </LinearLayout>
 
@@ -480,25 +398,25 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
                 android:layout_marginTop="10dp"
-                app:layout_constraintStart_toStartOf="parent"
+                android:background="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ll_about_hotel">
 
                 <com.google.android.material.button.MaterialButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="12dp"
                     android:backgroundTint="@color/blue"
-                    app:cornerRadius="15dp"
-                    android:textColor="@color/white"
-                    android:padding="15dp"
-                    android:textSize="16sp"
                     android:fontFamily="@font/sf_pro_display_medium"
+                    android:padding="15dp"
                     android:text="К выбору номера"
                     android:textAllCaps="false"
-                    android:layout_marginHorizontal="16dp"
-                    android:layout_marginTop="12dp"/>
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:cornerRadius="15dp" />
 
             </androidx.cardview.widget.CardView>
 

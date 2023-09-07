@@ -5,7 +5,7 @@ import com.example.data.HotelModelToDomainMapper
 import com.example.data.models.HotelModelEntity
 import com.example.data.network.NetworkApi
 import com.example.domain.Resource
-import com.example.domain.models.HotelModelDomain
+import com.example.domain.models.HotelModel
 import com.example.domain.repository.HotelFragmentRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -14,7 +14,7 @@ import retrofit2.Response
 import java.io.IOException
 
 class HotelFragmentRepositoryImpl(private val networkApi: NetworkApi): HotelFragmentRepository {
-    override suspend fun getHotelData(): Resource<HotelModelDomain> {
+    override suspend fun getHotelData(): Resource<HotelModel> {
         return withContext(Dispatchers.IO) {
             try {
                 val response: Response<HotelModelEntity> = networkApi.getHotelData()

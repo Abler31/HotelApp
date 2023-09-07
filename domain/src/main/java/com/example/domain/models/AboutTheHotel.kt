@@ -1,6 +1,6 @@
 package com.example.domain.models
 
-data class AboutTheHotelDomain(
+data class AboutTheHotel(
     val description: String,
     val peculiarities: List<String>
 )
