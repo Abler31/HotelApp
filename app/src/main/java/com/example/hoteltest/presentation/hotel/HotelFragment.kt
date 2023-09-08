@@ -6,11 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.navigation.fragment.findNavController
 import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
 import com.example.domain.Resource
 import com.example.hoteltest.R
+import com.google.android.material.button.MaterialButton
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HotelFragment : Fragment(R.layout.fragment_hotel) {
@@ -75,6 +77,11 @@ class HotelFragment : Fragment(R.layout.fragment_hotel) {
             }
         }
         vm.getHotelData()
+
+        val toRoomButton = view.findViewById<MaterialButton>(R.id.btn_to_room)
+        toRoomButton.setOnClickListener{
+            findNavController().navigate(R.id.action_hotel_to_room)
+        }
     }
 
 }
