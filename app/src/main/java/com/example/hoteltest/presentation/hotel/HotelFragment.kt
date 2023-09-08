@@ -62,7 +62,7 @@ class HotelFragment : Fragment(R.layout.fragment_hotel) {
                         imageList.add(SlideModel(str, ScaleTypes.CENTER_CROP))
                     }
 
-                    val imageSlider = view.findViewById<ImageSlider>(R.id.image_slider)
+                    val imageSlider = view.findViewById<ImageSlider>(R.id.image_slider_hotel)
                     imageSlider.setImageList(imageList)
                     Log.d("test success", it.data!!.name)
                 }

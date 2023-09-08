@@ -1,14 +1,13 @@
-package com.example.data
+package com.example.data.mappers
 
 import com.example.data.models.AboutTheHotelEntity
 import com.example.data.models.HotelModelEntity
-import com.example.domain.Mapper
 import com.example.domain.models.AboutTheHotel
 import com.example.domain.models.HotelModel
 
 class HotelModelToDomainMapper(
     private val aboutTheHotelEntityToDomainMapper: Mapper<AboutTheHotelEntity, AboutTheHotel>
-): Mapper<HotelModelEntity, HotelModel>{
+): Mapper<HotelModelEntity, HotelModel> {
     override fun transform(data: HotelModelEntity) = HotelModel(
         aboutTheHotelEntityToDomainMapper.transform(data.about_the_hotel),
         data.adress,

@@ -1,7 +1,6 @@
-package com.example.data
+package com.example.data.mappers
 
 import com.example.data.models.AboutTheHotelEntity
-import com.example.domain.Mapper
 import com.example.domain.models.AboutTheHotel
 
 class AboutTheHotelToDomainMapper: Mapper<AboutTheHotelEntity, AboutTheHotel> {

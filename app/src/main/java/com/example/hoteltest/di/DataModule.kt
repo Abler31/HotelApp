@@ -2,7 +2,9 @@ package com.example.hoteltest.di
 
 import com.example.data.network.NetworkApi
 import com.example.data.repository.HotelFragmentRepositoryImpl
+import com.example.data.repository.RoomRepositoryImpl
 import com.example.domain.repository.HotelFragmentRepository
+import com.example.domain.repository.RoomFragmentRepository
 import com.example.hoteltest.BuildConfig
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -12,6 +14,7 @@ val dataModule = module {
     single { provideRetrofit() }
     factory { provideNetworkApi(retrofit = get()) }
     single<HotelFragmentRepository> { HotelFragmentRepositoryImpl(networkApi = get()) }
+    single<RoomFragmentRepository> { RoomRepositoryImpl(networkApi = get()) }
 }
 
 fun provideRetrofit(): Retrofit {

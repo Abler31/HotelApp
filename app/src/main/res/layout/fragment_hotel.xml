@@ -43,11 +43,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="257dp"
                     android:layout_gravity="center"
+                    app:cardElevation="0dp"
                     android:layout_marginBottom="@dimen/dimen_16"
                     app:cardCornerRadius="15dp">
 
                     <com.denzcoskun.imageslider.ImageSlider
-                        android:id="@+id/image_slider"
+                        android:id="@+id/image_slider_hotel"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"/>
 
@@ -239,7 +240,7 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/icon_arrow"
+                                android:src="@drawable/icon_arrow_hotel"
                                 app:layout_constraintBottom_toBottomOf="@id/udobstva_box"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintTop_toTopOf="@+id/udobstva_box"
@@ -304,7 +305,7 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/icon_arrow"
+                                android:src="@drawable/icon_arrow_hotel"
                                 app:layout_constraintBottom_toBottomOf="@id/udobstva_box2"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintTop_toTopOf="@+id/udobstva_box2"
@@ -370,7 +371,7 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/icon_arrow"
+                                android:src="@drawable/icon_arrow_hotel"
                                 app:layout_constraintBottom_toBottomOf="@id/udobstva_box3"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintTop_toTopOf="@+id/udobstva_box3"
