@@ -14,22 +14,17 @@
             android:layout_height="wrap_content"
             android:background="@color/grey_field">
 
-            <com.google.android.material.appbar.AppBarLayout
+            <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/appBarLayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:elevation="0dp"
+                android:layout_height="?attr/actionBarSize"
+                app:title="@string/hotel_fragment_title"
+                app:titleCentered="true"
+                android:background="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <com.google.android.material.appbar.MaterialToolbar
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    app:title="@string/hotel_fragment_title"
-                    app:titleCentered="true"
-                    app:titleTextAppearance="@style/Toolbar.TitleText" />
-            </com.google.android.material.appbar.AppBarLayout>
+                app:layout_constraintTop_toTopOf="parent"
+                app:titleTextAppearance="@style/Toolbar.TitleText"/>
 
             <LinearLayout
                 android:id="@+id/ll_basic_data"
