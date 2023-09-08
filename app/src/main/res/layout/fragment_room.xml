@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/grey_field"
     tools:context=".presentation.room.RoomFragment">
 
 
@@ -23,6 +24,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        tools:listitem="@layout/room_recycler_item"
         app:layout_constraintTop_toBottomOf="@+id/toolbar_room"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
