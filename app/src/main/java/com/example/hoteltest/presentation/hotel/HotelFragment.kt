@@ -12,6 +12,7 @@ import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
 import com.example.domain.Resource
 import com.example.hoteltest.R
+import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.button.MaterialButton
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -21,6 +22,7 @@ class HotelFragment : Fragment(R.layout.fragment_hotel) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        requireActivity().findViewById<MaterialToolbar>(R.id.appToolbar).setTitle("Отель")
 
         val name = view.findViewById<TextView>(R.id.tv_hotel_name)
         val adress = view.findViewById<TextView>(R.id.tv_hotel_adress)

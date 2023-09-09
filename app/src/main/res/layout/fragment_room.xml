@@ -8,18 +8,6 @@
     android:orientation="vertical"
     tools:context=".presentation.room.RoomFragment">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/toolbar_room"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:navigationIcon="@drawable/icon_back"
-        app:title="@string/hotel_fragment_title"
-        app:titleCentered="true"
-        app:titleTextAppearance="@style/Toolbar.TitleText" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_room"
