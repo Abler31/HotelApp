@@ -22,8 +22,11 @@ class RoomFragment : Fragment(R.layout.fragment_room) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val bundle = arguments
+        val args = RoomFragmentArgs.fromBundle(bundle!!)
+
         requireActivity().findViewById<MaterialToolbar>(R.id.appToolbar).setNavigationIcon(R.drawable.icon_back)
-        requireActivity().findViewById<MaterialToolbar>(R.id.appToolbar).setTitle("Отель")
+        requireActivity().findViewById<MaterialToolbar>(R.id.appToolbar).setTitle(args.hotelName)
 
         roomAdapter = RoomRecyclerAdapter()
         roomRecyclerView = view.findViewById(R.id.rv_room)

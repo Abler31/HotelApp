@@ -67,7 +67,12 @@ class HotelFragment : Fragment(R.layout.fragment_hotel) {
 
                     val imageSlider = view.findViewById<ImageSlider>(R.id.image_slider_hotel)
                     imageSlider.setImageList(imageList)
-                    Log.d("test success", it.data!!.name)
+
+                    val toRoomButton = view.findViewById<MaterialButton>(R.id.btn_to_room)
+                    toRoomButton.setOnClickListener {
+                        val direction = HotelFragmentDirections.actionHotelToRoom(data.name)
+                        findNavController().navigate(direction)
+                    }
                 }
 
                 is Resource.Error -> {
@@ -81,10 +86,6 @@ class HotelFragment : Fragment(R.layout.fragment_hotel) {
         }
         vm.getHotelData()
 
-        val toRoomButton = view.findViewById<MaterialButton>(R.id.btn_to_room)
-        toRoomButton.setOnClickListener{
-            findNavController().navigate(R.id.action_hotel_to_room)
-        }
     }
 
 }

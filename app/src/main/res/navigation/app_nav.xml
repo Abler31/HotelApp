@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_room_to_hotel"
             app:destination="@id/hotel" />
+        <argument
+            android:name="hotelName"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/booking"
