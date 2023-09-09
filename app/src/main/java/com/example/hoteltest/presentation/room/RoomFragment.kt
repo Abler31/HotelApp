@@ -1,5 +1,6 @@
 package com.example.hoteltest.presentation.room
 
+import Room
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -45,6 +46,11 @@ class RoomFragment : Fragment(R.layout.fragment_room) {
         }
         vm.getRoomData()
 
+        roomAdapter.setOnClickListener(object : RoomRecyclerAdapter.OnItemClickListener{
+            override fun onItemClick(room: Room) {
+                findNavController().navigate(R.id.action_room_to_booking)
+            }
+        })
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

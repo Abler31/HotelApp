@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.TextView
+import androidx.constraintlayout.helper.widget.Flow
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.fragment.findNavController
 import com.denzcoskun.imageslider.ImageSlider
@@ -30,7 +31,7 @@ class HotelFragment : Fragment(R.layout.fragment_hotel) {
         val priceForIt = view.findViewById<TextView>(R.id.tv_hotel_price_for_it)
         val rating = view.findViewById<TextView>(R.id.tv_hotel_rating)
         val description = view.findViewById<TextView>(R.id.tv_hotel_description)
-        val flow = view.findViewById<androidx.constraintlayout.helper.widget.Flow>(R.id.flow_hotel)
+        val flow = view.findViewById<Flow>(R.id.flow_hotel)
 
         vm.hotelData.observe(viewLifecycleOwner) {
             when (it) {

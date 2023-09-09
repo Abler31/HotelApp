@@ -12,8 +12,11 @@ import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
 import com.example.hoteltest.R
+import com.google.android.material.button.MaterialButton
 
 class RoomRecyclerAdapter: RecyclerView.Adapter<RoomRecyclerAdapter.ItemsViewHolder>()  {
+
+    lateinit var clickListener: OnItemClickListener
 
     private var roomsList = emptyList<Room>()
 
@@ -24,16 +27,23 @@ class RoomRecyclerAdapter: RecyclerView.Adapter<RoomRecyclerAdapter.ItemsViewHol
         val roomPrice = itemView.findViewById<TextView>(R.id.tv_room_price)
         val roomPricePer = itemView.findViewById<TextView>(R.id.tv_room_pricePer)
         val flow = itemView.findViewById<androidx.constraintlayout.helper.widget.Flow>(R.id.flow_room_item)
+        val button = itemView.findViewById<MaterialButton>(R.id.btn_to_booking)
+        init {
+            button.setOnClickListener{
+                if (clickListener != null){
+                    clickListener.onItemClick(roomsList[adapterPosition])
+                }
+            }
+        }
 
-
-        fun bind(roomUI: Room){
-            roomName.text = roomUI.name
-            roomPrice.text = roomUI.price.toString()
+        fun bind(room: Room){
+            roomName.text = room.name
+            roomPrice.text = room.price.toString()
                 .replace("(\\d)(?=(\\d{3})+$)".toRegex(), "$1 ") + " ₽"
-            roomPricePer.text = roomUI.price_per.replaceFirstChar {
+            roomPricePer.text = room.price_per.replaceFirstChar {
                 it.lowercaseChar()
             }
-            roomUI.peculiarities.forEachIndexed { i, str ->
+            room.peculiarities.forEachIndexed { i, str ->
                 val peculiaritiesView =
                     LayoutInflater.from(itemView.context).inflate(R.layout.peculiarities_item, null)
                 peculiaritiesView.id = View.generateViewId()
@@ -45,7 +55,7 @@ class RoomRecyclerAdapter: RecyclerView.Adapter<RoomRecyclerAdapter.ItemsViewHol
 
                 val imageList = ArrayList<SlideModel>() // Create image list
 
-                roomUI.image_urls.forEach { s ->
+                room.image_urls.forEach { s ->
                     imageList.add(SlideModel(s, ScaleTypes.CENTER_CROP))
                 }
 
@@ -77,6 +87,14 @@ class RoomRecyclerAdapter: RecyclerView.Adapter<RoomRecyclerAdapter.ItemsViewHol
         }
         roomsList = newList
         notifyDataSetChanged()
+    }
+
+
+    interface OnItemClickListener{
+        fun onItemClick(room: Room)
+    }
+    fun setOnClickListener(onClickListener: OnItemClickListener){
+        this.clickListener = onClickListener
     }
 
 }
