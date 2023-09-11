@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey_field"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:mask="http://schemas.android.com/apk/res-auto"
-    tools:context=".presentation.booking.BookingFragment">
+    android:background="@color/grey_field">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/booking_hotel_block"
@@ -120,26 +119,26 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Страна, город"
-                android:fontFamily="@font/sf_pro_display_regular"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:textColor="@color/grey"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Страна, город"
+                    android:fontFamily="@font/sf_pro_display_regular"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:textColor="@color/grey"/>
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Египет, Хургада"
-                app:layout_constraintWidth_percent="0.63"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:fontFamily="@font/sf_pro_display_regular"
-                android:textSize="16sp"
-                android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Египет, Хургада"
+                    app:layout_constraintWidth_percent="0.63"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:fontFamily="@font/sf_pro_display_regular"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -378,8 +377,17 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Эти данные никому не передаются. После оплаты мы вышли чек на указанный вами номер и почту"
+                android:textSize="14sp"
+                android:fontFamily="@font/sf_pro_display_regular"
+                android:textColor="@color/grey"/>
+
         </LinearLayout>
-
     </androidx.cardview.widget.CardView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
