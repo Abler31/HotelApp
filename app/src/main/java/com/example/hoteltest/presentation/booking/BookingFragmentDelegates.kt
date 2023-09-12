@@ -1,6 +1,5 @@
 package com.example.hoteltest.presentation.booking
 
-import android.opengl.Visibility
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
@@ -11,11 +10,12 @@ import com.example.hoteltest.R
 import com.example.hoteltest.presentation.booking.model.BookingAddTourist
 import com.example.hoteltest.presentation.booking.model.BookingCustomer
 import com.example.hoteltest.presentation.booking.model.BookingHotel
+import com.example.hoteltest.presentation.booking.model.BookingPayButton
 import com.example.hoteltest.presentation.booking.model.BookingPrice
 import com.example.hoteltest.presentation.booking.model.BookingReservation
 import com.example.hoteltest.presentation.booking.model.BookingTourist
 import com.example.hoteltest.presentation.booking.model.DisplayableItem
-import com.example.hoteltest.presentation.room.RoomRecyclerAdapter
+import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegate
@@ -35,6 +35,7 @@ object BookingFragmentDelegates {
             address.text = item.address
         }
     }
+
 
     fun bookingReservationDelegate() = adapterDelegate<BookingReservation, DisplayableItem>(
         layout = R.layout.booking_recycler_reservation_item
@@ -173,6 +174,16 @@ object BookingFragmentDelegates {
             fuelCharge.text = item.fuelCharge
             serviceCharge.text = item.serviceCharge
             summary.text = item.summary
+        }
+    }
+
+    fun bookingPayButtonDelegate() = adapterDelegate<BookingPayButton, DisplayableItem>(
+        layout = R.layout.booking_recycler_pay_button_item
+    ){
+        val btn = findViewById<MaterialButton>(R.id.btn_booking_to_paid)
+
+        bind { diffPayloads ->
+            btn.text = item.sumText
         }
     }
 

@@ -10,7 +10,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_to_room"
+        android:id="@+id/btn_booking_to_paid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
