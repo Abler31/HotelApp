@@ -1,8 +1,10 @@
 package com.example.hoteltest.di
 
 import com.example.data.network.NetworkApi
+import com.example.data.repository.BookingFragmentRepositoryImpl
 import com.example.data.repository.HotelFragmentRepositoryImpl
 import com.example.data.repository.RoomRepositoryImpl
+import com.example.domain.repository.BookingFragmentRepository
 import com.example.domain.repository.HotelFragmentRepository
 import com.example.domain.repository.RoomFragmentRepository
 import com.example.hoteltest.BuildConfig
@@ -15,6 +17,7 @@ val dataModule = module {
     factory { provideNetworkApi(retrofit = get()) }
     single<HotelFragmentRepository> { HotelFragmentRepositoryImpl(networkApi = get()) }
     single<RoomFragmentRepository> { RoomRepositoryImpl(networkApi = get()) }
+    single<BookingFragmentRepository> { BookingFragmentRepositoryImpl(networkApi = get()) }
 }
 
 fun provideRetrofit(): Retrofit {

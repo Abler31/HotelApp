@@ -1,25 +1,39 @@
 package com.example.hoteltest.presentation.booking
 
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.domain.Resource
 import com.example.hoteltest.R
-import com.example.hoteltest.presentation.booking.model.BookingHotel
-import com.example.hoteltest.presentation.booking.model.BookingTourist
 import com.example.hoteltest.presentation.booking.model.DisplayableItem
-import com.google.android.material.textfield.TextInputEditText
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class BookingFragment : Fragment(R.layout.fragment_booking) {
+    private val vm by viewModel<BookingViewModel>()
     lateinit var rv: RecyclerView
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        vm.bookingData.observe(viewLifecycleOwner){
+            when(it){
+                is Resource.Success -> {
+                    val data = it.data
+
+                }
+                is Resource.Error -> {
+
+                }
+                is Resource.Loading -> {
+
+                }
+            }
+        }
+        vm.getHotelData()
 
         val mList = mutableListOf<DisplayableItem>(
 

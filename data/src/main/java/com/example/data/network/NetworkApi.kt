@@ -1,5 +1,6 @@
 package com.example.data.network
 
+import com.example.data.models.BookingModelEntity
 import com.example.data.models.HotelModelEntity
 import com.example.data.models.RoomEntity
 import com.example.data.models.RoomModelEntity
@@ -12,4 +13,7 @@ interface NetworkApi {
 
     @GET("v3/f9a38183-6f95-43aa-853a-9c83cbb05ecd")
     suspend fun getRoomData(): Response<RoomModelEntity>
+
+    @GET("v3/e8868481-743f-4eb2-a0d7-2bc4012275c8")
+    suspend fun getBookingData(): Response<BookingModelEntity>
 }
