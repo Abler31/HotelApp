@@ -1,6 +1,7 @@
 package com.example.hoteltest.presentation.booking
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -24,15 +25,17 @@ class BookingFragment : Fragment(R.layout.fragment_booking) {
     private val vm by viewModel<BookingViewModel>()
     lateinit var rv: RecyclerView
     val mList = mutableListOf<DisplayableItem>()
+
     val adapter = ListDelegationAdapter<List<DisplayableItem>>(
         BookingFragmentDelegates.bookingHotelDelegate(),
         BookingFragmentDelegates.bookingReservationDelegate(),
         BookingFragmentDelegates.bookingCustomerDelegate(),
         BookingFragmentDelegates.bookingTouristDelegate(),
-        BookingFragmentDelegates.bookingAddTouristDelegate(),
+        BookingFragmentDelegates.bookingAddTouristDelegate(::onAddClicked),
         BookingFragmentDelegates.bookingPriceDelegate(),
         BookingFragmentDelegates.bookingPayButtonDelegate()
     )
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -104,5 +107,12 @@ class BookingFragment : Fragment(R.layout.fragment_booking) {
         mList.add(BookingPayButton("Оплатить ${sumPrice}"))
         adapter.items = mList
         adapter.notifyDataSetChanged()
+    }
+
+    private fun onAddClicked(){
+        Log.d("addButton", "Clicked")
+        val index = mList.size - 3
+        mList.add(index, BookingTourist())
+        adapter.notifyItemInserted(mList.size - 3)
     }
 }

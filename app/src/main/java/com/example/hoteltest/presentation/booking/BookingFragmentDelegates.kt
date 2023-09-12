@@ -22,6 +22,7 @@ import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegate
 
 object BookingFragmentDelegates {
 
+
     fun bookingHotelDelegate() = adapterDelegate<BookingHotel, DisplayableItem>(
         layout = R.layout.booking_recycler_hotel_item
         ){
@@ -151,13 +152,15 @@ object BookingFragmentDelegates {
         }
     }
 
-    fun bookingAddTouristDelegate() = adapterDelegate<BookingAddTourist, DisplayableItem>(
+    fun bookingAddTouristDelegate(itemClickedListener: () -> Unit) = adapterDelegate<BookingAddTourist, DisplayableItem>(
         layout = R.layout.booking_recycler_add_tourist_item
     ){
         val btn = findViewById<CardView>(R.id.btn_booking_add)
-
+        btn.setOnClickListener {
+            itemClickedListener()
+        }
+        bindingAdapter
         bind { diffPayloads ->
-
         }
     }
 
