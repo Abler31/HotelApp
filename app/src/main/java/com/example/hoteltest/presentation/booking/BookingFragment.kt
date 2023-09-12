@@ -37,6 +37,7 @@ class BookingFragment : Fragment(R.layout.fragment_booking) {
     )
 
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         requireActivity().findViewById<MaterialToolbar>(R.id.appToolbar).setTitle("Бронирование")
@@ -112,7 +113,7 @@ class BookingFragment : Fragment(R.layout.fragment_booking) {
     private fun onAddClicked(){
         Log.d("addButton", "Clicked")
         val index = mList.size - 3
-        mList.add(index, BookingTourist())
+        mList.add(index, BookingTourist(touristNumber = BookingTourist.counter))
         adapter.notifyItemInserted(mList.size - 3)
     }
 }

@@ -124,6 +124,8 @@ object BookingFragmentDelegates {
         val citizenship = findViewById<TextInputLayout>(R.id.text_input_tourist_citizenship)
         val passport = findViewById<TextInputLayout>(R.id.text_input_tourist_passport)
         val expiration = findViewById<TextInputLayout>(R.id.text_input_tourist_expiration)
+        val touristNumber = findViewById<TextView>(R.id.tv_tourist_number)
+
 
         btn.setOnClickListener {
             if (!item.expanded){
@@ -148,7 +150,7 @@ object BookingFragmentDelegates {
 
         }
         bind { diffPayloads ->
-
+            touristNumber.text = item.toOrdinal(item.touristNumber).plus(" турист")
         }
     }
 
@@ -157,6 +159,7 @@ object BookingFragmentDelegates {
     ){
         val btn = findViewById<CardView>(R.id.btn_booking_add)
         btn.setOnClickListener {
+            BookingTourist.counter ++
             itemClickedListener()
         }
         bindingAdapter
