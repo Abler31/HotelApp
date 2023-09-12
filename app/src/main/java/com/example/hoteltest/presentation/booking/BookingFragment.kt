@@ -5,57 +5,38 @@ import android.text.Editable
 import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.View
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.hoteltest.R
+import com.example.hoteltest.presentation.booking.model.BookingHotel
+import com.example.hoteltest.presentation.booking.model.BookingTourist
+import com.example.hoteltest.presentation.booking.model.DisplayableItem
 import com.google.android.material.textfield.TextInputEditText
+import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
 
 class BookingFragment : Fragment(R.layout.fragment_booking) {
+    lateinit var rv: RecyclerView
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val phoneEditText = view.findViewById<TextInputEditText>(R.id.et_phone_number)
-        phoneEditText.addTextChangedListener(object : TextWatcher {
-            private var mSelfChange = false
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
-            override fun onTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                if (s == null || mSelfChange) {
-                    return
-                }
+        val mList = mutableListOf<DisplayableItem>(
 
-                val preparedStr = s.replace(Regex("(\\D*)"), "")
-                var resultStr = ""
+        )
 
-                for (i in preparedStr.indices) {
-                    resultStr = when (i) {
-                        0 -> resultStr.plus("+7 (")
-                        1 -> resultStr.plus(preparedStr[i])
-                        2 -> resultStr.plus(preparedStr[i])
-                        3 -> resultStr.plus(preparedStr[i])
-                        4 -> resultStr.plus(") ".plus(preparedStr[i]))
-                        5 -> resultStr.plus(preparedStr[i])
-                        6 -> resultStr.plus(preparedStr[i])
-                        7 -> resultStr.plus("-".plus(preparedStr[i]))
-                        8 -> resultStr.plus(preparedStr[i])
-                        9 -> resultStr.plus("-".plus(preparedStr[i]))
-                        10 -> resultStr.plus(preparedStr[i])
-                        else -> resultStr
-                    }
-                }
+        rv = view.findViewById(R.id.rv_booking)
+        rv.layoutManager = LinearLayoutManager(requireContext())
+        val adapter = ListDelegationAdapter<List<DisplayableItem>>(
+            BookingFragmentDelegates.bookingHotelDelegate(),
+            BookingFragmentDelegates.bookingReservationDelegate(),
+            BookingFragmentDelegates.bookingCustomerDelegate(),
+            BookingFragmentDelegates.bookingTouristDelegate(),
+            BookingFragmentDelegates.bookingAddTouristDelegate(),
+            BookingFragmentDelegates.bookingPriceDelegate()
+        )
+        adapter.items = mList
+        rv.adapter = adapter
 
-                mSelfChange = true
-                val oldSelectionPos = phoneEditText.selectionStart
-                val isEdit = phoneEditText.selectionStart != phoneEditText.length()
-                phoneEditText.setText(resultStr)
-                if (isEdit) {
-                    phoneEditText.setSelection(if (oldSelectionPos > resultStr.length) resultStr.length else oldSelectionPos)
-                } else {
-                    phoneEditText.setSelection(resultStr.length)
-                }
-                mSelfChange = false
-            }
-
-            override fun afterTextChanged(s: Editable?) {}
-        })
     }
 }
