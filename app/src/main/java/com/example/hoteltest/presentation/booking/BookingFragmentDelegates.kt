@@ -2,6 +2,7 @@ package com.example.hoteltest.presentation.booking
 
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Patterns
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -64,6 +65,17 @@ object BookingFragmentDelegates {
         layout = R.layout.booking_recycler_customer_item
     ){
         val phoneEditText = findViewById<TextInputEditText>(R.id.et_phone_number)
+        val emailEditText = findViewById<TextInputEditText>(R.id.et_email)
+        val layoutEmail = findViewById<TextInputLayout>(R.id.input_layout_email)
+        emailEditText.setOnFocusChangeListener { view, hasFocus ->
+            if (!hasFocus && (emailEditText.text.isNullOrEmpty()
+                        || !Patterns.EMAIL_ADDRESS.matcher(emailEditText.text.toString()).matches())){
+                layoutEmail.boxBackgroundColor = context.getColor(R.color.error_color)
+            } else {
+                layoutEmail.boxBackgroundColor = context.getColor(R.color.grey_field)
+            }
+        }
+        
         phoneEditText.addTextChangedListener(object : TextWatcher {
             private var mSelfChange = false
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}

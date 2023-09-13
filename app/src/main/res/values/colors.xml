@@ -13,4 +13,5 @@
     <color name="grey_light_a">#26828796</color>
     <color name="grey_field">#F6F6F9</color>
     <color name="grey_field_text">#A9ABB7</color>
+    <color name="error_color">#26EB5757</color>
 </resources>
