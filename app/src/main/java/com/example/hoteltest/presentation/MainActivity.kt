@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
-        val appBarConfiguration = AppBarConfiguration(navController.graph)
+        val appBarConfiguration = AppBarConfiguration(setOf(R.id.hotel, R.id.room, R.id.booking, R.id.paid))
 
         val toolbar = findViewById<MaterialToolbar>(R.id.appToolbar)
         toolbar.setNavigationIcon(R.drawable.icon_back)
