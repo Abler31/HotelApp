@@ -1,7 +1,6 @@
 package com.example.hoteltest.presentation.booking
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -37,10 +36,11 @@ class BookingFragment : Fragment(R.layout.fragment_booking) {
     )
 
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         requireActivity().findViewById<MaterialToolbar>(R.id.appToolbar).setTitle("Бронирование")
+        requireActivity().findViewById<MaterialToolbar>(R.id.appToolbar)
+            .setNavigationIcon(R.drawable.icon_back)
 
         rv = view.findViewById(R.id.rv_booking)
         rv.layoutManager = LinearLayoutManager(requireContext())
@@ -65,6 +65,7 @@ class BookingFragment : Fragment(R.layout.fragment_booking) {
         vm.getHotelData()
         rv.adapter = adapter
     }
+
 
     private fun setBookingData(data: BookingModel?) {
         mList.add(
@@ -110,8 +111,7 @@ class BookingFragment : Fragment(R.layout.fragment_booking) {
         adapter.notifyDataSetChanged()
     }
 
-    private fun onAddClicked(){
-        Log.d("addButton", "Clicked")
+    private fun onAddClicked() {
         val index = mList.size - 3
         mList.add(index, BookingTourist(touristNumber = BookingTourist.counter))
         adapter.notifyItemInserted(mList.size - 3)

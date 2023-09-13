@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.navigation.findNavController
 import com.example.hoteltest.R
 import com.example.hoteltest.presentation.booking.model.BookingAddTourist
 import com.example.hoteltest.presentation.booking.model.BookingCustomer
@@ -23,10 +24,9 @@ import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegate
 
 object BookingFragmentDelegates {
 
-
     fun bookingHotelDelegate() = adapterDelegate<BookingHotel, DisplayableItem>(
         layout = R.layout.booking_recycler_hotel_item
-        ){
+    ) {
         val rating = findViewById<TextView>(R.id.tv_booking_hotel_rating)
         val name = findViewById<TextView>(R.id.tv_booking_hotel_name)
         val address = findViewById<TextView>(R.id.tv_booking_hotel_address)
@@ -41,7 +41,7 @@ object BookingFragmentDelegates {
 
     fun bookingReservationDelegate() = adapterDelegate<BookingReservation, DisplayableItem>(
         layout = R.layout.booking_recycler_reservation_item
-    ){
+    ) {
         val departure = findViewById<TextView>(R.id.tv_booking_departure)
         val country = findViewById<TextView>(R.id.tv_booking_country)
         val numberOfNights = findViewById<TextView>(R.id.tv_booking_number_of_nights)
@@ -63,19 +63,20 @@ object BookingFragmentDelegates {
 
     fun bookingCustomerDelegate() = adapterDelegate<BookingCustomer, DisplayableItem>(
         layout = R.layout.booking_recycler_customer_item
-    ){
+    ) {
         val phoneEditText = findViewById<TextInputEditText>(R.id.et_phone_number)
         val emailEditText = findViewById<TextInputEditText>(R.id.et_email)
         val layoutEmail = findViewById<TextInputLayout>(R.id.input_layout_email)
         emailEditText.setOnFocusChangeListener { view, hasFocus ->
             if (!hasFocus && (emailEditText.text.isNullOrEmpty()
-                        || !Patterns.EMAIL_ADDRESS.matcher(emailEditText.text.toString()).matches())){
+                        || !Patterns.EMAIL_ADDRESS.matcher(emailEditText.text.toString()).matches())
+            ) {
                 layoutEmail.boxBackgroundColor = context.getColor(R.color.error_color)
             } else {
                 layoutEmail.boxBackgroundColor = context.getColor(R.color.grey_field)
             }
         }
-        
+
         phoneEditText.addTextChangedListener(object : TextWatcher {
             private var mSelfChange = false
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
@@ -127,7 +128,7 @@ object BookingFragmentDelegates {
 
     fun bookingTouristDelegate() = adapterDelegate<BookingTourist, DisplayableItem>(
         layout = R.layout.booking_recycler_tourist_item
-    ){
+    ) {
         val btn = findViewById<CardView>(R.id.btn_booking_expand)
         val image = findViewById<ImageView>(R.id.iv_booking_arrow)
         val name = findViewById<TextInputLayout>(R.id.text_input_tourist_name)
@@ -140,7 +141,7 @@ object BookingFragmentDelegates {
 
 
         btn.setOnClickListener {
-            if (!item.expanded){
+            if (!item.expanded) {
                 item.expanded = true
                 image.setImageResource(R.drawable.icon_arrow_up)
                 name.visibility = View.VISIBLE
@@ -149,7 +150,7 @@ object BookingFragmentDelegates {
                 citizenship.visibility = View.VISIBLE
                 passport.visibility = View.VISIBLE
                 expiration.visibility = View.VISIBLE
-            }else{
+            } else {
                 item.expanded = false
                 image.setImageResource(R.drawable.icon_arrow_down)
                 name.visibility = View.GONE
@@ -166,27 +167,27 @@ object BookingFragmentDelegates {
         }
     }
 
-    fun bookingAddTouristDelegate(itemClickedListener: () -> Unit) = adapterDelegate<BookingAddTourist, DisplayableItem>(
-        layout = R.layout.booking_recycler_add_tourist_item
-    ){
-        val btn = findViewById<CardView>(R.id.btn_booking_add)
-        btn.setOnClickListener {
-            BookingTourist.counter ++
-            itemClickedListener()
+    fun bookingAddTouristDelegate(itemClickedListener: () -> Unit) =
+        adapterDelegate<BookingAddTourist, DisplayableItem>(
+            layout = R.layout.booking_recycler_add_tourist_item
+        ) {
+            val btn = findViewById<CardView>(R.id.btn_booking_add)
+            btn.setOnClickListener {
+                BookingTourist.counter++
+                itemClickedListener()
+            }
+            bindingAdapter
+            bind { diffPayloads ->
+            }
         }
-        bindingAdapter
-        bind { diffPayloads ->
-        }
-    }
 
     fun bookingPriceDelegate() = adapterDelegate<BookingPrice, DisplayableItem>(
         layout = R.layout.booking_recycler_price_item
-    ){
+    ) {
         val tourPrice = findViewById<TextView>(R.id.tv_booking_tour_price)
         val fuelCharge = findViewById<TextView>(R.id.tv_booking_fuel_charge)
         val serviceCharge = findViewById<TextView>(R.id.tv_booking_service_charge)
         val summary = findViewById<TextView>(R.id.tv_booking_sum)
-
         bind { diffPayloads ->
             tourPrice.text = item.tourPrice
             fuelCharge.text = item.fuelCharge
@@ -197,8 +198,11 @@ object BookingFragmentDelegates {
 
     fun bookingPayButtonDelegate() = adapterDelegate<BookingPayButton, DisplayableItem>(
         layout = R.layout.booking_recycler_pay_button_item
-    ){
+    ) {
         val btn = findViewById<MaterialButton>(R.id.btn_booking_to_paid)
+        btn.setOnClickListener {
+            it.findNavController().navigate(R.id.action_booking_to_paid)
+        }
 
         bind { diffPayloads ->
             btn.text = item.sumText

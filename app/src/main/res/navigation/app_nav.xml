@@ -22,9 +22,6 @@
         <action
             android:id="@+id/action_room_to_booking"
             app:destination="@id/booking" />
-        <action
-            android:id="@+id/action_room_to_hotel"
-            app:destination="@id/hotel" />
         <argument
             android:name="hotelName"
             app:argType="string" />
