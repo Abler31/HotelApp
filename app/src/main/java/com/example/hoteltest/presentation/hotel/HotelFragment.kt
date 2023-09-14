@@ -76,11 +76,11 @@ class HotelFragment : Fragment(R.layout.fragment_hotel) {
                 }
 
                 is Resource.Error -> {
-                    Log.d("test error", it.message!!)
+
                 }
 
                 is Resource.Loading -> {
-                    Log.d("test", "Загрузка...")
+
                 }
             }
         }

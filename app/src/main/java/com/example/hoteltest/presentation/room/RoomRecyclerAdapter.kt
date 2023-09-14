@@ -31,7 +31,7 @@ class RoomRecyclerAdapter: RecyclerView.Adapter<RoomRecyclerAdapter.ItemsViewHol
         init {
             button.setOnClickListener{
                 if (clickListener != null){
-                    clickListener.onItemClick(roomsList[adapterPosition])
+                    clickListener.onItemClick(roomsList[bindingAdapterPosition])
                 }
             }
         }
@@ -39,7 +39,7 @@ class RoomRecyclerAdapter: RecyclerView.Adapter<RoomRecyclerAdapter.ItemsViewHol
         fun bind(room: Room){
             roomName.text = room.name
             roomPrice.text = room.price.toString()
-                .replace("(\\d)(?=(\\d{3})+$)".toRegex(), "$1 ") + " ₽"
+                .replace("(\\d)(?=(\\d{3})+$)".toRegex(), "$1 ").plus(" ₽")
             roomPricePer.text = room.price_per.replaceFirstChar {
                 it.lowercaseChar()
             }

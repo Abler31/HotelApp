@@ -40,10 +40,10 @@ class RoomFragment : Fragment(R.layout.fragment_room) {
                     Log.d("test success", it.data!!.rooms[0].name)
                 }
                 is Resource.Error -> {
-                    Log.d("test failed", "Error")
+
                 }
                 is Resource.Loading -> {
-                    Log.d("test loading", "loading")
+
                 }
             }
         }
