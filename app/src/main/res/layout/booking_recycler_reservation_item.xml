@@ -3,6 +3,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
 
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/booking_reservation_block"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -30,7 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/sf_pro_display_regular"
-                android:text="Вылет из"
+                android:text="@string/booking_flight"
                 android:textColor="@color/grey"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -41,12 +42,12 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/sf_pro_display_regular"
-                android:text="Санкт-Петербург"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintWidth_percent="0.63" />
+                app:layout_constraintWidth_percent="0.63"
+                tools:text="Санкт-Петербург" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -62,7 +63,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/sf_pro_display_regular"
-                android:text="Страна, город"
+                android:text="@string/booking_country"
                 android:textColor="@color/grey"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -73,12 +74,12 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/sf_pro_display_regular"
-                android:text="Египет, Хургада"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintWidth_percent="0.63" />
+                app:layout_constraintWidth_percent="0.63"
+                tools:text="Египет, Хургада" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -94,7 +95,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/sf_pro_display_regular"
-                android:text="Даты"
+                android:text="@string/booking_dates"
                 android:textColor="@color/grey"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -105,12 +106,12 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/sf_pro_display_regular"
-                android:text="19.09.2023 – 27.09.2023"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintWidth_percent="0.63" />
+                app:layout_constraintWidth_percent="0.63"
+                tools:text="19.09.2023 – 27.09.2023" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -126,7 +127,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/sf_pro_display_regular"
-                android:text="Кол-во ночей"
+                android:text="@string/booking_nights"
                 android:textColor="@color/grey"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -137,12 +138,12 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/sf_pro_display_regular"
-                android:text="7 ночей"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintWidth_percent="0.63" />
+                app:layout_constraintWidth_percent="0.63"
+                tools:text="7 ночей" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -158,7 +159,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/sf_pro_display_regular"
-                android:text="Отель"
+                android:text="@string/booking_hotel"
                 android:textColor="@color/grey"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -169,12 +170,12 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/sf_pro_display_regular"
-                android:text="Steigenberger Makadi"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintWidth_percent="0.63" />
+                app:layout_constraintWidth_percent="0.63"
+                tools:text="Steigenberger Makadi" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -190,7 +191,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/sf_pro_display_regular"
-                android:text="Номер"
+                android:text="@string/booking_room"
                 android:textColor="@color/grey"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -201,12 +202,12 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/sf_pro_display_regular"
-                android:text="Стандартный с видом на бассейн или сад"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintWidth_percent="0.63" />
+                app:layout_constraintWidth_percent="0.63"
+                tools:text="Стандартный с видом на бассейн или сад" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -222,7 +223,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/sf_pro_display_regular"
-                android:text="Питание"
+                android:text="@string/booking_nutrition"
                 android:textColor="@color/grey"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -233,12 +234,12 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/sf_pro_display_regular"
-                android:text="Все включено"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintWidth_percent="0.63" />
+                app:layout_constraintWidth_percent="0.63"
+                tools:text="Все включено" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

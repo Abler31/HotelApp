@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="8dp"
@@ -20,23 +21,23 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:text="Тур"
                 android:fontFamily="@font/sf_pro_display_regular"
+                android:text="@string/booking_tour"
+                android:textColor="@color/grey"
                 android:textSize="16sp"
-                android:textColor="@color/grey"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_booking_tour_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:text="186 600 ₽"
                 android:fontFamily="@font/sf_pro_display_regular"
+                android:textColor="@color/black"
                 android:textSize="16sp"
-                android:textColor="@color/black"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="186 600 ₽" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -48,23 +49,23 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:text="Топливный сбор"
                 android:fontFamily="@font/sf_pro_display_regular"
+                android:text="@string/booking_fuel"
+                android:textColor="@color/grey"
                 android:textSize="16sp"
-                android:textColor="@color/grey"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_booking_fuel_charge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:text="9 300 ₽"
                 android:fontFamily="@font/sf_pro_display_regular"
+                android:textColor="@color/black"
                 android:textSize="16sp"
-                android:textColor="@color/black"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="9 300 ₽" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -76,23 +77,23 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:text="Сервисный сбор"
                 android:fontFamily="@font/sf_pro_display_regular"
+                android:text="@string/booking_service"
+                android:textColor="@color/grey"
                 android:textSize="16sp"
-                android:textColor="@color/grey"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_booking_service_charge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:text="2 136 ₽"
                 android:fontFamily="@font/sf_pro_display_regular"
+                android:textColor="@color/black"
                 android:textSize="16sp"
-                android:textColor="@color/black"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="2 136 ₽" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -104,23 +105,23 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:text="К оплате"
                 android:fontFamily="@font/sf_pro_display_regular"
+                android:text="@string/booking_summary"
+                android:textColor="@color/grey"
                 android:textSize="16sp"
-                android:textColor="@color/grey"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_booking_sum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:text="198 036 ₽"
                 android:fontFamily="@font/sf_pro_display_semibold"
+                android:textColor="@color/blue"
                 android:textSize="16sp"
-                android:textColor="@color/blue"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="198 036 ₽" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

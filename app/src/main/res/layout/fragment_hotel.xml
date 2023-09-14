@@ -32,14 +32,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="257dp"
                     android:layout_gravity="center"
-                    app:cardElevation="0dp"
                     android:layout_marginBottom="@dimen/dimen_16"
-                    app:cardCornerRadius="15dp">
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="0dp">
 
                     <com.denzcoskun.imageslider.ImageSlider
                         android:id="@+id/image_slider_hotel"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -129,7 +129,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/sf_pro_display_medium"
-                    android:text="Об отеле"
+                    android:text="@string/hotel_about_hotel"
                     android:textColor="@color/black"
                     android:textSize="22sp" />
 
@@ -212,7 +212,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/sf_pro_display_medium"
-                                    android:text="Удобства"
+                                    android:text="@string/hotel_amenities"
                                     android:textColor="@color/black_Light"
                                     android:textSize="16sp" />
 
@@ -220,7 +220,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/sf_pro_display_medium"
-                                    android:text="Самое необходимое"
+                                    android:text="@string/hotel_necessary"
                                     android:textColor="@color/grey"
                                     android:textSize="14sp" />
 
@@ -277,7 +277,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/sf_pro_display_medium"
-                                    android:text="Что включено"
+                                    android:text="@string/hotel_included"
                                     android:textColor="@color/black_Light"
                                     android:textSize="16sp" />
 
@@ -285,7 +285,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/sf_pro_display_medium"
-                                    android:text="Самое необходимое"
+                                    android:text="@string/hotel_necessary"
                                     android:textColor="@color/grey"
                                     android:textSize="14sp" />
 
@@ -343,7 +343,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/sf_pro_display_medium"
-                                    android:text="Что не включено"
+                                    android:text="@string/hotel_not_included"
                                     android:textColor="@color/black_Light"
                                     android:textSize="16sp" />
 
@@ -351,7 +351,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/sf_pro_display_medium"
-                                    android:text="Самое необходимое"
+                                    android:text="@string/hotel_necessary"
                                     android:textColor="@color/grey"
                                     android:textSize="14sp" />
 
@@ -392,7 +392,7 @@
                     android:backgroundTint="@color/blue"
                     android:fontFamily="@font/sf_pro_display_medium"
                     android:padding="15dp"
-                    android:text="К выбору номера"
+                    android:text="@string/hotel_button_text"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     android:textSize="16sp"

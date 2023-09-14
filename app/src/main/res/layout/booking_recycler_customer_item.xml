@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/booking_customer_block"
     android:layout_width="match_parent"
@@ -10,8 +9,8 @@
     app:cardCornerRadius="12dp"
     app:cardElevation="0dp"
     app:contentPadding="@dimen/dimen_16"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintStart_toStartOf="parent">
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,61 +20,61 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Информация о покупателе"
             android:fontFamily="@font/sf_pro_display_medium"
-            android:textSize="22sp"
-            android:textColor="@color/black"/>
+            android:text="@string/booking_customer_info"
+            android:textColor="@color/black"
+            android:textSize="22sp" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_marginTop="20dp"
-            android:focusableInTouchMode="true"
-            app:boxCornerRadiusTopStart="10dp"
-            app:boxCornerRadiusBottomStart="10dp"
-            app:boxCornerRadiusBottomEnd="10dp"
-            app:boxCornerRadiusTopEnd="10dp"
-            app:hintTextColor="@color/blue"
-            android:textColorHint="@color/grey_field_text"
-            app:boxBackgroundColor="@color/grey_field"
-            app:boxStrokeWidth="0dp"
-            app:boxStrokeWidthFocused="0dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Номер телефона">
+            android:layout_marginTop="20dp"
+            android:focusableInTouchMode="true"
+            android:hint="@string/booking_phone_hint"
+            android:textColorHint="@color/grey_field_text"
+            app:boxBackgroundColor="@color/grey_field"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusTopStart="10dp"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:hintTextColor="@color/blue">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_phone_number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
                 android:fontFamily="@font/sf_pro_display_regular"
-                android:textSize="16sp"/>
+                android:inputType="number"
+                android:textSize="16sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/input_layout_email"
-            android:layout_marginTop="8dp"
-            android:focusableInTouchMode="true"
-            app:boxCornerRadiusTopStart="10dp"
-            app:boxCornerRadiusBottomStart="10dp"
-            app:boxCornerRadiusBottomEnd="10dp"
-            app:boxCornerRadiusTopEnd="10dp"
-            app:hintTextColor="@color/blue"
-            android:textColorHint="@color/grey_field_text"
-            app:boxBackgroundColor="@color/grey_field"
-            app:boxStrokeWidth="0dp"
-            app:boxStrokeWidthFocused="0dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Почта">
+            android:layout_marginTop="8dp"
+            android:focusableInTouchMode="true"
+            android:hint="@string/booking_email_hint"
+            android:textColorHint="@color/grey_field_text"
+            app:boxBackgroundColor="@color/grey_field"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusTopStart="10dp"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:hintTextColor="@color/blue">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/sf_pro_display_regular"
-                android:textSize="16sp"/>
+                android:textSize="16sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -83,10 +82,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Эти данные никому не передаются. После оплаты мы вышли чек на указанный вами номер и почту"
-            android:textSize="14sp"
             android:fontFamily="@font/sf_pro_display_regular"
-            android:textColor="@color/grey"/>
+            android:text="@string/booking_not_transmitted"
+            android:textColor="@color/grey"
+            android:textSize="14sp" />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>
